@@ -1,0 +1,6 @@
+[dotenv] Set [36mPG_PASSWORD[0m, [36mPG_USERNAME[0m, and [36mREAL_TME_SEARCH_ENGINE_DATABASE_PASSWORD[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[35mSET search_path TO public /*application='RealTmeSearchEngine'*/[0m
+  [1m[35m (621.7ms)[0m  [1m[35mCREATE DATABASE "real_tme_search_engine_development" ENCODING = 'unicode' /*application='RealTmeSearchEngine'*/[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[35mSET search_path TO public /*application='RealTmeSearchEngine'*/[0m
+  [1m[35m (545.6ms)[0m  [1m[35mCREATE DATABASE "real_tme_search_engine_test" ENCODING = 'unicode' /*application='RealTmeSearchEngine'*/[0m
