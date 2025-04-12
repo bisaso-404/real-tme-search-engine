@@ -10,3 +10,32 @@
 [dotenv] Loaded [33m.env[0m
 [dotenv] Set [36mPG_PASSWORD[0m, [36mPG_USERNAME[0m, and [36mREAL_TME_SEARCH_ENGINE_DATABASE_PASSWORD[0m
 [dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mPG_PASSWORD[0m, [36mPG_USERNAME[0m, and [36mREAL_TME_SEARCH_ENGINE_DATABASE_PASSWORD[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[35mSET search_path TO public /*application='RealTmeSearchEngine'*/[0m
+  [1m[35m (624.8ms)[0m  [1m[35mCREATE DATABASE "real_tme_search_engine_development" ENCODING = 'unicode' /*application='RealTmeSearchEngine'*/[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[35mSET search_path TO public /*application='RealTmeSearchEngine'*/[0m
+  [1m[35m (494.2ms)[0m  [1m[35mCREATE DATABASE "real_tme_search_engine_test" ENCODING = 'unicode' /*application='RealTmeSearchEngine'*/[0m
+[dotenv] Set [36mPG_PASSWORD[0m, [36mPG_USERNAME[0m, and [36mREAL_TME_SEARCH_ENGINE_DATABASE_PASSWORD[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (18.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY) /*application='RealTmeSearchEngine'*/[0m
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='RealTmeSearchEngine'*/[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5576632869063612300) /*application='RealTmeSearchEngine'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='RealTmeSearchEngine'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (2.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2025-04-12 09:46:48.320908', '2025-04-12 09:46:48.320912') RETURNING "key" /*application='RealTmeSearchEngine'*/[0m
+Migrating to CreateSearchQueries (20250412081108)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN /*application='RealTmeSearchEngine'*/[0m
+  [1m[35m (18.6ms)[0m  [1m[35mCREATE TABLE "search_queries" ("id" bigserial primary key, "query" character varying NOT NULL, "ip_address" character varying NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='RealTmeSearchEngine'*/[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE INDEX "index_search_queries_on_ip_address" ON "search_queries" ("ip_address") /*application='RealTmeSearchEngine'*/[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE INDEX "index_search_queries_on_created_at" ON "search_queries" ("created_at") /*application='RealTmeSearchEngine'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250412081108') RETURNING "version" /*application='RealTmeSearchEngine'*/[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT /*application='RealTmeSearchEngine'*/[0m
+Migrating to CreateSearchSummaries (20250412081139)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN /*application='RealTmeSearchEngine'*/[0m
+  [1m[35m (8.8ms)[0m  [1m[35mCREATE TABLE "search_summaries" ("id" bigserial primary key, "ip_address" character varying NOT NULL, "query" character varying NOT NULL, "search_count" integer DEFAULT 1, "last_searched_at" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='RealTmeSearchEngine'*/[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_search_summaries_on_ip_address_and_query" ON "search_summaries" ("ip_address", "query") /*application='RealTmeSearchEngine'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250412081139') RETURNING "version" /*application='RealTmeSearchEngine'*/[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT /*application='RealTmeSearchEngine'*/[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(5576632869063612300) /*application='RealTmeSearchEngine'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='RealTmeSearchEngine'*/[0m
