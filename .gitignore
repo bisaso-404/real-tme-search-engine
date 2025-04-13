@@ -1,0 +1,62 @@
+# Ignore bundler config.
+/.bundle
+
+# Ignore the default SQLite database.
+/db/*.sqlite3
+/db/*.sqlite3-journal
+
+# Ignore database dumps.
+/db/schema.rb
+/db/structure.sql
+/db/development.*
+/db/test.*
+
+# Ignore log files and temp files.
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+
+# Ignore pidfiles, sockets.
+/*.pid
+/*.pid.lock
+/tmp/pids/*
+/tmp/sockets/*
+
+# Ignore cache.
+/tmp/cache
+/public/assets
+/public/packs
+/public/packs-test
+
+# Ignore compiled assets.
+/node_modules
+/yarn-error.log
+/.yarn-integrity
+.byebug_history
+
+# Ignore uploaded files in development.
+/storage/*
+!/storage/.keep
+
+# Ignore credentials and environment configs.
+/config/master.key
+/config/credentials.yml.enc
+.env
+.env.*
+
+# Ignore IDE/editor files.
+*.swp
+*.swo
+*.bak
+*.tmp
+*.idea/
+.vscode/
+.DS_Store
+*.iml
+
+# Ignore system files.
+*.log
+coverage/
+.rspec_status
+spring/
