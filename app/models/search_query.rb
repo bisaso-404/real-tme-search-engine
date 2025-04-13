@@ -1,3 +1,3 @@
 class SearchQuery < ApplicationRecord
-    validate :query, ip_address, presence: true
+    validates :query, :ip_address, presence: true
 end

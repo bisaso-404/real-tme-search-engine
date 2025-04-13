@@ -1,0 +1,18 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search Analytics</title>
+    <%= stylesheet_link_tag "application", media: "all" %>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Real-Time Search</h2>
+      <input type="text" id="searchInput" placeholder="Search..." />
+      <div id="results"></div>
+      <h4>Your Search Analytics</h4>
+      <ul id="analytics"></ul>
+    </div>
+    <%= javascript_include_tag 'application' %>
+  </body>
+</html>
