@@ -91,4 +91,5 @@ production:
     url: <%= ENV['DATABASE_URL'] %>
   cache:
     <<: *default
+    adapter: postgresql
     url: <%= ENV['DATABASE_URL'] %>
