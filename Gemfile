@@ -1,6 +1,10 @@
 source "https://rubygems.org"
 # ruby "3.2.8"
-ruby "3.3.8"
+ruby "3.2.8" 
+# frozen_string_literal: true
+gem 'solid_queue'
+gem 'solid_cache'
+gem 'solid_cable'
  
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
