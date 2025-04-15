@@ -60,3 +60,5 @@
 coverage/
 .rspec_status
 spring/
+
+/config/credentials/production.key
