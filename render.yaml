@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: real-tme-search-engine
+    env: ruby
+    buildCommand: 'bundle install'
+    startCommand: 'bundle exec rails server'
+    envVars:
+      - key: SECRET_KEY_BASE
+        value: 151ac3875a09cfb9abb9f4121ff49084717f0e11973ffec376a8accbee02fcdf4ca60104f923801a0d4314924024bfac33daaab7b8b2123127ee440d9d18a518
