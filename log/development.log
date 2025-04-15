@@ -15943,3 +15943,1245 @@ Completed 200 OK in 1202ms (Views: 2.8ms | ActiveRecord: 0.7ms (1 query, 0 cache
 [dotenv] Loaded [33m.env[0m
 [dotenv] Set [36mPG_PASSWORD[0m, [36mPG_USERNAME[0m, and [36mREAL_TME_SEARCH_ENGINE_DATABASE_PASSWORD[0m
 [dotenv] Loaded [33m.env[0m
+Started GET "/" for 127.0.0.1 at 2025-04-15 10:37:51 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='RealTmeSearchEngine'*/[0m
+Processing by SearchesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (Duration: 60.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 245.4ms | GC: 0.0ms)
+Completed 200 OK in 2362ms (Views: 383.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/assets/application-25feb695.css" for 127.0.0.1 at 2025-04-15 10:37:57 +0300
+Started GET "/assets/application-48eea4e1.js" for 127.0.0.1 at 2025-04-15 10:37:57 +0300
+Started GET "/analytics" for 127.0.0.1 at 2025-04-15 10:37:57 +0300
+Processing by SearchesController#analytics as */*
+  [1m[36mSearchSummary Load (5.3ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' ORDER BY "search_summaries"."search_count" DESC, "search_summaries"."last_searched_at" DESC LIMIT 10 /*action='analytics',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:21:in `map'
+Completed 200 OK in 1529ms (Views: 1.9ms | ActiveRecord: 48.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/searches" for 127.0.0.1 at 2025-04-15 10:38:04 +0300
+Processing by SearchesController#create as */*
+  Parameters: {"query"=>"P", "search"=>{"query"=>"P"}}
+Started POST "/searches" for 127.0.0.1 at 2025-04-15 10:38:05 +0300
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mBEGIN /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mSearchQuery Create (21.5ms)[0m  [1m[32mINSERT INTO "search_queries" ("query", "ip_address", "created_at", "updated_at") VALUES ('P', '127.0.0.1', '2025-04-15 07:38:05.261991', '2025-04-15 07:38:05.261991') RETURNING "id" /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+Processing by SearchesController#create as */*
+  Parameters: {"query"=>"Pe", "search"=>{"query"=>"Pe"}}
+Started POST "/searches" for 127.0.0.1 at 2025-04-15 10:38:05 +0300
+Processing by SearchesController#create as */*
+  Parameters: {"query"=>"Pet", "search"=>{"query"=>"Pet"}}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mSearchQuery Create (4.8ms)[0m  [1m[32mINSERT INTO "search_queries" ("query", "ip_address", "created_at", "updated_at") VALUES ('Pe', '127.0.0.1', '2025-04-15 07:38:06.128563', '2025-04-15 07:38:06.128563') RETURNING "id" /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[35mCOMMIT /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mSearchQuery Create (4.9ms)[0m  [1m[32mINSERT INTO "search_queries" ("query", "ip_address", "created_at", "updated_at") VALUES ('Pet', '127.0.0.1', '2025-04-15 07:38:06.693042', '2025-04-15 07:38:06.693042') RETURNING "id" /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+Completed 201 Created in 3954ms (Views: 0.7ms | ActiveRecord: 31.0ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/analytics" for 127.0.0.1 at 2025-04-15 10:38:08 +0300
+Processing by SearchesController#analytics as */*
+Completed 201 Created in 3758ms (Views: 0.2ms | ActiveRecord: 7.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mSearchSummary Load (1.0ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' ORDER BY "search_summaries"."search_count" DESC, "search_summaries"."last_searched_at" DESC LIMIT 10 /*action='analytics',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:21:in `map'
+Completed 200 OK in 723ms (Views: 1.3ms | ActiveRecord: 1.0ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/analytics" for 127.0.0.1 at 2025-04-15 10:38:09 +0300
+Started POST "/searches" for 127.0.0.1 at 2025-04-15 10:38:09 +0300
+Processing by SearchesController#analytics as */*
+Processing by SearchesController#create as */*
+  Parameters: {"query"=>"Peter", "search"=>{"query"=>"Peter"}}
+  [1m[36mSearchQuery Load (3.8ms)[0m  [1m[34mSELECT "search_queries".* FROM "search_queries" WHERE "search_queries"."id" = 126 LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:5:in `perform'
+Completed 201 Created in 3775ms (Views: 0.2ms | ActiveRecord: 6.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mSearchQuery Load (209.1ms)[0m  [1m[34mSELECT "search_queries".* FROM "search_queries" WHERE "search_queries"."id" = 127 LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:5:in `perform'
+  [1m[36mSearchQuery Load (0.5ms)[0m  [1m[34mSELECT "search_queries".* FROM "search_queries" WHERE "search_queries"."id" = 128 LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:5:in `perform'
+Started POST "/searches" for 127.0.0.1 at 2025-04-15 10:38:09 +0300
+Processing by SearchesController#create as */*
+  Parameters: {"query"=>"Peter did", "search"=>{"query"=>"Peter did"}}
+  [1m[36mSearchSummary Load (6.5ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' ORDER BY "search_summaries"."search_count" DESC, "search_summaries"."last_searched_at" DESC LIMIT 10 /*action='analytics',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:21:in `map'
+Completed 200 OK in 1274ms (Views: 2.6ms | ActiveRecord: 6.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/analytics" for 127.0.0.1 at 2025-04-15 10:38:10 +0300
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mSearchQuery Create (8.4ms)[0m  [1m[32mINSERT INTO "search_queries" ("query", "ip_address", "created_at", "updated_at") VALUES ('Peter', '127.0.0.1', '2025-04-15 07:38:10.929988', '2025-04-15 07:38:10.929988') RETURNING "id" /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (3.9ms)[0m  [1m[35mCOMMIT /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+Completed 201 Created in 1398ms (Views: 0.2ms | ActiveRecord: 12.9ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mSearchQuery Load (0.9ms)[0m  [1m[34mSELECT "search_queries".* FROM "search_queries" WHERE "search_queries"."id" = 129 LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:5:in `perform'
+Processing by SearchesController#analytics as */*
+Started POST "/searches" for 127.0.0.1 at 2025-04-15 10:38:11 +0300
+Processing by SearchesController#create as */*
+  Parameters: {"query"=>"Peter did not", "search"=>{"query"=>"Peter did not"}}
+  [1m[36mTRANSACTION (4.5ms)[0m  [1m[35mBEGIN /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mSearchQuery Create (17.7ms)[0m  [1m[32mINSERT INTO "search_queries" ("query", "ip_address", "created_at", "updated_at") VALUES ('Peter did', '127.0.0.1', '2025-04-15 07:38:11.831130', '2025-04-15 07:38:11.831130') RETURNING "id" /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (6.8ms)[0m  [1m[35mCOMMIT /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+Completed 201 Created in 1429ms (Views: 0.1ms | ActiveRecord: 28.9ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mSearchQuery Load (0.6ms)[0m  [1m[34mSELECT "search_queries".* FROM "search_queries" WHERE "search_queries"."id" = 130 LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:5:in `perform'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:14:in `block in perform'
+  [1m[36mSearchSummary Load (2.3ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' AND (LENGTH(query) < 9) /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:17:in `block in perform'
+  [1m[36mSearchSummary Load (0.4ms)[0m  [1m[37mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' AND "search_summaries"."query" = 'peter did' LIMIT 1 FOR UPDATE /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:24:in `block in perform'
+  [1m[36mSearchSummary Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "search_summaries" WHERE "search_summaries"."query" = 'peter did' AND "search_summaries"."ip_address" = '127.0.0.1' LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:28:in `block in perform'
+  [1m[36mSearchSummary Create (1.1ms)[0m  [1m[32mINSERT INTO "search_summaries" ("ip_address", "query", "search_count", "last_searched_at", "created_at", "updated_at") VALUES ('127.0.0.1', 'peter did', 2, '2025-04-15 07:38:12.037944', '2025-04-15 07:38:12.042674', '2025-04-15 07:38:12.042674') RETURNING "id" /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:28:in `block in perform'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:13:in `perform'
+Started POST "/searches" for 127.0.0.1 at 2025-04-15 10:38:12 +0300
+Processing by SearchesController#create as */*
+  Parameters: {"query"=>"Peter did no", "search"=>{"query"=>"Peter did no"}}
+  [1m[36mSearchSummary Load (3.8ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' ORDER BY "search_summaries"."search_count" DESC, "search_summaries"."last_searched_at" DESC LIMIT 10 /*action='analytics',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:21:in `map'
+Completed 200 OK in 1597ms (Views: 1.6ms | ActiveRecord: 3.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/analytics" for 127.0.0.1 at 2025-04-15 10:38:12 +0300
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mSearchQuery Create (5.0ms)[0m  [1m[32mINSERT INTO "search_queries" ("query", "ip_address", "created_at", "updated_at") VALUES ('Peter did not', '127.0.0.1', '2025-04-15 07:38:13.043967', '2025-04-15 07:38:13.043967') RETURNING "id" /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+Completed 201 Created in 1614ms (Views: 0.2ms | ActiveRecord: 6.1ms (1 query, 0 cached) | GC: 990.2ms)
+
+
+Processing by SearchesController#analytics as */*
+  [1m[36mSearchQuery Load (0.6ms)[0m  [1m[34mSELECT "search_queries".* FROM "search_queries" WHERE "search_queries"."id" = 131 LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:5:in `perform'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:17:in `block in perform'
+  [1m[36mSearchSummary Load (2.9ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' AND (LENGTH(query) < 13) /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:17:in `block in perform'
+  [1m[36mSearchSummary Destroy (0.9ms)[0m  [1m[31mDELETE FROM "search_summaries" WHERE "search_summaries"."id" = 85 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:19:in `block (2 levels) in perform'
+  [1m[36mSearchSummary Load (0.5ms)[0m  [1m[37mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' AND "search_summaries"."query" = 'peter did not' LIMIT 1 FOR UPDATE /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:24:in `block in perform'
+  [1m[36mSearchSummary Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "search_summaries" WHERE "search_summaries"."query" = 'peter did not' AND "search_summaries"."ip_address" = '127.0.0.1' LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:28:in `block in perform'
+  [1m[36mSearchSummary Create (0.5ms)[0m  [1m[32mINSERT INTO "search_summaries" ("ip_address", "query", "search_count", "last_searched_at", "created_at", "updated_at") VALUES ('127.0.0.1', 'peter did not', 2, '2025-04-15 07:38:13.195677', '2025-04-15 07:38:13.199296', '2025-04-15 07:38:13.199296') RETURNING "id" /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:28:in `block in perform'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:13:in `perform'
+Started POST "/searches" for 127.0.0.1 at 2025-04-15 10:38:13 +0300
+Processing by SearchesController#create as */*
+  Parameters: {"query"=>"Peter d", "search"=>{"query"=>"Peter d"}}
+  [1m[36mTRANSACTION (4.5ms)[0m  [1m[35mBEGIN /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mSearchQuery Create (15.9ms)[0m  [1m[32mINSERT INTO "search_queries" ("query", "ip_address", "created_at", "updated_at") VALUES ('Peter did no', '127.0.0.1', '2025-04-15 07:38:13.930201', '2025-04-15 07:38:13.930201') RETURNING "id" /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (7.3ms)[0m  [1m[35mCOMMIT /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+Completed 201 Created in 1450ms (Views: 0.2ms | ActiveRecord: 27.6ms (1 query, 0 cached) | GC: 990.2ms)
+
+
+  [1m[36mSearchQuery Load (0.5ms)[0m  [1m[34mSELECT "search_queries".* FROM "search_queries" WHERE "search_queries"."id" = 132 LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:5:in `perform'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:17:in `block in perform'
+  [1m[36mSearchSummary Load (5.0ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' AND (LENGTH(query) < 12) /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:17:in `block in perform'
+  [1m[36mSearchSummary Load (0.4ms)[0m  [1m[37mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' AND "search_summaries"."query" = 'peter did no' LIMIT 1 FOR UPDATE /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:24:in `block in perform'
+  [1m[36mSearchSummary Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "search_summaries" WHERE "search_summaries"."query" = 'peter did no' AND "search_summaries"."ip_address" = '127.0.0.1' LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:28:in `block in perform'
+  [1m[36mSearchSummary Create (0.5ms)[0m  [1m[32mINSERT INTO "search_summaries" ("ip_address", "query", "search_count", "last_searched_at", "created_at", "updated_at") VALUES ('127.0.0.1', 'peter did no', 2, '2025-04-15 07:38:14.109951', '2025-04-15 07:38:14.114173', '2025-04-15 07:38:14.114173') RETURNING "id" /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:28:in `block in perform'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:13:in `perform'
+  [1m[36mSearchSummary Load (1.5ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' ORDER BY "search_summaries"."search_count" DESC, "search_summaries"."last_searched_at" DESC LIMIT 10 /*action='analytics',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:21:in `map'
+Completed 200 OK in 1368ms (Views: 1.6ms | ActiveRecord: 1.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/analytics" for 127.0.0.1 at 2025-04-15 10:38:14 +0300
+Processing by SearchesController#analytics as */*
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mSearchQuery Create (6.1ms)[0m  [1m[32mINSERT INTO "search_queries" ("query", "ip_address", "created_at", "updated_at") VALUES ('Peter d', '127.0.0.1', '2025-04-15 07:38:14.906440', '2025-04-15 07:38:14.906440') RETURNING "id" /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[35mCOMMIT /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+Completed 201 Created in 1286ms (Views: 0.2ms | ActiveRecord: 9.9ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mSearchQuery Load (0.6ms)[0m  [1m[34mSELECT "search_queries".* FROM "search_queries" WHERE "search_queries"."id" = 133 LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:5:in `perform'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:17:in `block in perform'
+  [1m[36mSearchSummary Load (2.5ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' AND (LENGTH(query) < 7) /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:17:in `block in perform'
+  [1m[36mSearchSummary Load (0.4ms)[0m  [1m[37mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' AND "search_summaries"."query" = 'peter d' LIMIT 1 FOR UPDATE /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:24:in `block in perform'
+  [1m[36mSearchSummary Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "search_summaries" WHERE "search_summaries"."query" = 'peter d' AND "search_summaries"."ip_address" = '127.0.0.1' LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:28:in `block in perform'
+  [1m[36mSearchSummary Create (0.5ms)[0m  [1m[32mINSERT INTO "search_summaries" ("ip_address", "query", "search_count", "last_searched_at", "created_at", "updated_at") VALUES ('127.0.0.1', 'peter d', 2, '2025-04-15 07:38:15.055309', '2025-04-15 07:38:15.059432', '2025-04-15 07:38:15.059432') RETURNING "id" /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:28:in `block in perform'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:13:in `perform'
+  [1m[36mSearchSummary Load (0.6ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' ORDER BY "search_summaries"."search_count" DESC, "search_summaries"."last_searched_at" DESC LIMIT 10 /*action='analytics',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:21:in `map'
+Completed 200 OK in 809ms (Views: 2.3ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/analytics" for 127.0.0.1 at 2025-04-15 10:38:15 +0300
+Processing by SearchesController#analytics as */*
+  [1m[36mSearchSummary Load (0.6ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' ORDER BY "search_summaries"."search_count" DESC, "search_summaries"."last_searched_at" DESC LIMIT 10 /*action='analytics',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:21:in `map'
+Completed 200 OK in 640ms (Views: 1.8ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/analytics" for 127.0.0.1 at 2025-04-15 10:38:16 +0300
+Processing by SearchesController#analytics as */*
+Started POST "/searches" for 127.0.0.1 at 2025-04-15 10:38:16 +0300
+Processing by SearchesController#create as */*
+  Parameters: {"query"=>"Peter did not g", "search"=>{"query"=>"Peter did not g"}}
+Started POST "/searches" for 127.0.0.1 at 2025-04-15 10:38:16 +0300
+Processing by SearchesController#create as */*
+  Parameters: {"query"=>"Peter did not ge", "search"=>{"query"=>"Peter did not ge"}}
+  [1m[36mSearchSummary Load (2.8ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' ORDER BY "search_summaries"."search_count" DESC, "search_summaries"."last_searched_at" DESC LIMIT 10 /*action='analytics',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:21:in `map'
+Completed 200 OK in 845ms (Views: 2.3ms | ActiveRecord: 2.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/analytics" for 127.0.0.1 at 2025-04-15 10:38:17 +0300
+Processing by SearchesController#analytics as */*
+  [1m[36mTRANSACTION (4.5ms)[0m  [1m[35mBEGIN /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mSearchQuery Create (16.8ms)[0m  [1m[32mINSERT INTO "search_queries" ("query", "ip_address", "created_at", "updated_at") VALUES ('Peter did not g', '127.0.0.1', '2025-04-15 07:38:18.204753', '2025-04-15 07:38:18.204753') RETURNING "id" /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (10.1ms)[0m  [1m[35mCOMMIT /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+Completed 201 Created in 1440ms (Views: 0.1ms | ActiveRecord: 31.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mSearchQuery Load (0.7ms)[0m  [1m[34mSELECT "search_queries".* FROM "search_queries" WHERE "search_queries"."id" = 134 LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:5:in `perform'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:17:in `block in perform'
+  [1m[36mSearchSummary Load (3.8ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' AND (LENGTH(query) < 15) /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:17:in `block in perform'
+  [1m[36mSearchSummary Destroy (0.4ms)[0m  [1m[31mDELETE FROM "search_summaries" WHERE "search_summaries"."id" = 86 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:19:in `block (2 levels) in perform'
+  [1m[36mSearchSummary Destroy (0.4ms)[0m  [1m[31mDELETE FROM "search_summaries" WHERE "search_summaries"."id" = 87 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:19:in `block (2 levels) in perform'
+  [1m[36mSearchSummary Destroy (0.3ms)[0m  [1m[31mDELETE FROM "search_summaries" WHERE "search_summaries"."id" = 88 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:19:in `block (2 levels) in perform'
+  [1m[36mSearchSummary Load (0.4ms)[0m  [1m[37mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' AND "search_summaries"."query" = 'peter did not g' LIMIT 1 FOR UPDATE /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:24:in `block in perform'
+  [1m[36mSearchSummary Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "search_summaries" WHERE "search_summaries"."query" = 'peter did not g' AND "search_summaries"."ip_address" = '127.0.0.1' LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:28:in `block in perform'
+  [1m[36mSearchSummary Create (0.4ms)[0m  [1m[32mINSERT INTO "search_summaries" ("ip_address", "query", "search_count", "last_searched_at", "created_at", "updated_at") VALUES ('127.0.0.1', 'peter did not g', 2, '2025-04-15 07:38:18.408456', '2025-04-15 07:38:18.413430', '2025-04-15 07:38:18.413430') RETURNING "id" /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:28:in `block in perform'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:13:in `perform'
+Started POST "/searches" for 127.0.0.1 at 2025-04-15 10:38:18 +0300
+  [1m[36mTRANSACTION (4.4ms)[0m  [1m[35mBEGIN /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mSearchQuery Create (15.3ms)[0m  [1m[32mINSERT INTO "search_queries" ("query", "ip_address", "created_at", "updated_at") VALUES ('Peter did not ge', '127.0.0.1', '2025-04-15 07:38:18.755962', '2025-04-15 07:38:18.755962') RETURNING "id" /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (4.8ms)[0m  [1m[35mCOMMIT /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+Completed 201 Created in 1586ms (Views: 0.2ms | ActiveRecord: 24.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/searches" for 127.0.0.1 at 2025-04-15 10:38:18 +0300
+Processing by SearchesController#create as */*
+  Parameters: {"query"=>"Peter did not get", "search"=>{"query"=>"Peter did not get"}}
+  [1m[36mSearchQuery Load (0.4ms)[0m  [1m[34mSELECT "search_queries".* FROM "search_queries" WHERE "search_queries"."id" = 135 LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:5:in `perform'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:17:in `block in perform'
+  [1m[36mSearchSummary Load (4.5ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' AND (LENGTH(query) < 16) /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:17:in `block in perform'
+  [1m[36mSearchSummary Destroy (0.5ms)[0m  [1m[31mDELETE FROM "search_summaries" WHERE "search_summaries"."id" = 89 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:19:in `block (2 levels) in perform'
+  [1m[36mSearchSummary Load (0.4ms)[0m  [1m[37mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' AND "search_summaries"."query" = 'peter did not ge' LIMIT 1 FOR UPDATE /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:24:in `block in perform'
+  [1m[36mSearchSummary Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "search_summaries" WHERE "search_summaries"."query" = 'peter did not ge' AND "search_summaries"."ip_address" = '127.0.0.1' LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:28:in `block in perform'
+  [1m[36mSearchSummary Create (0.5ms)[0m  [1m[32mINSERT INTO "search_summaries" ("ip_address", "query", "search_count", "last_searched_at", "created_at", "updated_at") VALUES ('127.0.0.1', 'peter did not ge', 2, '2025-04-15 07:38:18.933021', '2025-04-15 07:38:18.936930', '2025-04-15 07:38:18.936930') RETURNING "id" /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:28:in `block in perform'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:13:in `perform'
+  [1m[36mSearchSummary Load (0.6ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' ORDER BY "search_summaries"."search_count" DESC, "search_summaries"."last_searched_at" DESC LIMIT 10 /*action='analytics',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:21:in `map'
+Completed 200 OK in 1567ms (Views: 1.5ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Processing by SearchesController#create as */*
+  Parameters: {"query"=>"Peter did not get to", "search"=>{"query"=>"Peter did not get to"}}
+Started GET "/analytics" for 127.0.0.1 at 2025-04-15 10:38:19 +0300
+Processing by SearchesController#analytics as */*
+  [1m[36mTRANSACTION (11.1ms)[0m  [1m[35mBEGIN /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mSearchQuery Create (32.0ms)[0m  [1m[32mINSERT INTO "search_queries" ("query", "ip_address", "created_at", "updated_at") VALUES ('Peter did not get', '127.0.0.1', '2025-04-15 07:38:20.296617', '2025-04-15 07:38:20.296617') RETURNING "id" /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (15.9ms)[0m  [1m[35mCOMMIT /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+Completed 201 Created in 1458ms (Views: 0.3ms | ActiveRecord: 58.9ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mSearchQuery Load (0.5ms)[0m  [1m[34mSELECT "search_queries".* FROM "search_queries" WHERE "search_queries"."id" = 136 LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:5:in `perform'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:17:in `block in perform'
+  [1m[36mSearchSummary Load (3.7ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' AND (LENGTH(query) < 17) /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:17:in `block in perform'
+  [1m[36mSearchSummary Destroy (0.4ms)[0m  [1m[31mDELETE FROM "search_summaries" WHERE "search_summaries"."id" = 90 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:19:in `block (2 levels) in perform'
+  [1m[36mSearchSummary Load (0.5ms)[0m  [1m[37mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' AND "search_summaries"."query" = 'peter did not get' LIMIT 1 FOR UPDATE /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:24:in `block in perform'
+  [1m[36mSearchSummary Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "search_summaries" WHERE "search_summaries"."query" = 'peter did not get' AND "search_summaries"."ip_address" = '127.0.0.1' LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:28:in `block in perform'
+  [1m[36mSearchSummary Create (0.4ms)[0m  [1m[32mINSERT INTO "search_summaries" ("ip_address", "query", "search_count", "last_searched_at", "created_at", "updated_at") VALUES ('127.0.0.1', 'peter did not get', 2, '2025-04-15 07:38:20.514226', '2025-04-15 07:38:20.518273', '2025-04-15 07:38:20.518273') RETURNING "id" /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:28:in `block in perform'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:13:in `perform'
+Started POST "/searches" for 127.0.0.1 at 2025-04-15 10:38:20 +0300
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mBEGIN /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mSearchQuery Create (15.3ms)[0m  [1m[32mINSERT INTO "search_queries" ("query", "ip_address", "created_at", "updated_at") VALUES ('Peter did not get to', '127.0.0.1', '2025-04-15 07:38:20.838983', '2025-04-15 07:38:20.838983') RETURNING "id" /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+Completed 201 Created in 1640ms (Views: 0.2ms | ActiveRecord: 18.9ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mSearchQuery Load (0.4ms)[0m  [1m[34mSELECT "search_queries".* FROM "search_queries" WHERE "search_queries"."id" = 137 LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:5:in `perform'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:17:in `block in perform'
+  [1m[36mSearchSummary Load (3.7ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' AND (LENGTH(query) < 20) /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:17:in `block in perform'
+  [1m[36mSearchSummary Destroy (0.4ms)[0m  [1m[31mDELETE FROM "search_summaries" WHERE "search_summaries"."id" = 91 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:19:in `block (2 levels) in perform'
+  [1m[36mSearchSummary Load (0.4ms)[0m  [1m[37mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' AND "search_summaries"."query" = 'peter did not get to' LIMIT 1 FOR UPDATE /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:24:in `block in perform'
+  [1m[36mSearchSummary Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "search_summaries" WHERE "search_summaries"."query" = 'peter did not get to' AND "search_summaries"."ip_address" = '127.0.0.1' LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:28:in `block in perform'
+Processing by SearchesController#create as */*
+  [1m[36mSearchSummary Create (0.4ms)[0m  [1m[32mINSERT INTO "search_summaries" ("ip_address", "query", "search_count", "last_searched_at", "created_at", "updated_at") VALUES ('127.0.0.1', 'peter did not get to', 2, '2025-04-15 07:38:20.993799', '2025-04-15 07:38:20.998613', '2025-04-15 07:38:20.998613') RETURNING "id" /*application='RealTmeSearchEngine'*/[0m
+  Parameters: {"query"=>"Peter did not get to me", "search"=>{"query"=>"Peter did not get to me"}}
+  ↳ app/sidekiq/summarize_search_job.rb:28:in `block in perform'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:13:in `perform'
+Started POST "/searches" for 127.0.0.1 at 2025-04-15 10:38:21 +0300
+  [1m[36mSearchSummary Load (1.5ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' ORDER BY "search_summaries"."search_count" DESC, "search_summaries"."last_searched_at" DESC LIMIT 10 /*action='analytics',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:21:in `map'
+Completed 200 OK in 1646ms (Views: 2.7ms | ActiveRecord: 1.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/analytics" for 127.0.0.1 at 2025-04-15 10:38:21 +0300
+Processing by SearchesController#create as */*
+  Parameters: {"query"=>"Peter did not get to", "search"=>{"query"=>"Peter did not get to"}}
+Processing by SearchesController#analytics as */*
+  [1m[36mTRANSACTION (9.5ms)[0m  [1m[35mBEGIN /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mSearchQuery Create (30.6ms)[0m  [1m[32mINSERT INTO "search_queries" ("query", "ip_address", "created_at", "updated_at") VALUES ('Peter did not get to me', '127.0.0.1', '2025-04-15 07:38:22.355205', '2025-04-15 07:38:22.355205') RETURNING "id" /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (11.8ms)[0m  [1m[35mCOMMIT /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+Completed 201 Created in 1415ms (Views: 0.1ms | ActiveRecord: 51.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mSearchQuery Load (0.5ms)[0m  [1m[34mSELECT "search_queries".* FROM "search_queries" WHERE "search_queries"."id" = 138 LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:5:in `perform'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:17:in `block in perform'
+  [1m[36mSearchSummary Load (3.1ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' AND (LENGTH(query) < 23) /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:17:in `block in perform'
+  [1m[36mSearchSummary Destroy (0.4ms)[0m  [1m[31mDELETE FROM "search_summaries" WHERE "search_summaries"."id" = 92 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:19:in `block (2 levels) in perform'
+  [1m[36mSearchSummary Load (0.5ms)[0m  [1m[37mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' AND "search_summaries"."query" = 'peter did not get to me' LIMIT 1 FOR UPDATE /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:24:in `block in perform'
+  [1m[36mSearchSummary Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "search_summaries" WHERE "search_summaries"."query" = 'peter did not get to me' AND "search_summaries"."ip_address" = '127.0.0.1' LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:28:in `block in perform'
+  [1m[36mSearchSummary Create (0.4ms)[0m  [1m[32mINSERT INTO "search_summaries" ("ip_address", "query", "search_count", "last_searched_at", "created_at", "updated_at") VALUES ('127.0.0.1', 'peter did not get to me', 2, '2025-04-15 07:38:22.631040', '2025-04-15 07:38:22.635592', '2025-04-15 07:38:22.635592') RETURNING "id" /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:28:in `block in perform'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:13:in `perform'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mSearchQuery Create (10.9ms)[0m  [1m[32mINSERT INTO "search_queries" ("query", "ip_address", "created_at", "updated_at") VALUES ('Peter did not get to', '127.0.0.1', '2025-04-15 07:38:22.875217', '2025-04-15 07:38:22.875217') RETURNING "id" /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[35mCOMMIT /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+Completed 201 Created in 1607ms (Views: 0.3ms | ActiveRecord: 14.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mSearchQuery Load (0.5ms)[0m  [1m[34mSELECT "search_queries".* FROM "search_queries" WHERE "search_queries"."id" = 139 LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:5:in `perform'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:17:in `block in perform'
+  [1m[36mSearchSummary Load (5.2ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' AND (LENGTH(query) < 20) /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:17:in `block in perform'
+  [1m[36mSearchSummary Load (0.3ms)[0m  [1m[37mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' AND "search_summaries"."query" = 'peter did not get to' LIMIT 1 FOR UPDATE /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:24:in `block in perform'
+  [1m[36mSearchSummary Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "search_summaries" WHERE "search_summaries"."query" = 'peter did not get to' AND "search_summaries"."ip_address" = '127.0.0.1' LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:28:in `block in perform'
+  [1m[36mSearchSummary Create (0.3ms)[0m  [1m[32mINSERT INTO "search_summaries" ("ip_address", "query", "search_count", "last_searched_at", "created_at", "updated_at") VALUES ('127.0.0.1', 'peter did not get to', 2, '2025-04-15 07:38:23.025547', '2025-04-15 07:38:23.028748', '2025-04-15 07:38:23.028748') RETURNING "id" /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:28:in `block in perform'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:13:in `perform'
+  [1m[36mSearchSummary Load (0.8ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' ORDER BY "search_summaries"."search_count" DESC, "search_summaries"."last_searched_at" DESC LIMIT 10 /*action='analytics',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:21:in `map'
+Completed 200 OK in 1601ms (Views: 1.5ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/analytics" for 127.0.0.1 at 2025-04-15 10:38:23 +0300
+Processing by SearchesController#analytics as */*
+  [1m[36mSearchSummary Load (1.1ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' ORDER BY "search_summaries"."search_count" DESC, "search_summaries"."last_searched_at" DESC LIMIT 10 /*action='analytics',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:21:in `map'
+Completed 200 OK in 594ms (Views: 2.4ms | ActiveRecord: 1.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/analytics" for 127.0.0.1 at 2025-04-15 10:38:23 +0300
+Processing by SearchesController#analytics as */*
+Started POST "/searches" for 127.0.0.1 at 2025-04-15 10:38:24 +0300
+Processing by SearchesController#create as */*
+  Parameters: {"query"=>"Peter did not get t", "search"=>{"query"=>"Peter did not get t"}}
+  [1m[36mSearchSummary Load (0.7ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' ORDER BY "search_summaries"."search_count" DESC, "search_summaries"."last_searched_at" DESC LIMIT 10 /*action='analytics',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:21:in `map'
+Completed 200 OK in 773ms (Views: 2.0ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/analytics" for 127.0.0.1 at 2025-04-15 10:38:24 +0300
+Processing by SearchesController#analytics as */*
+Started POST "/searches" for 127.0.0.1 at 2025-04-15 10:38:25 +0300
+Processing by SearchesController#create as */*
+  Parameters: {"query"=>"Peter did not get", "search"=>{"query"=>"Peter did not get"}}
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[35mBEGIN /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mSearchQuery Create (22.4ms)[0m  [1m[32mINSERT INTO "search_queries" ("query", "ip_address", "created_at", "updated_at") VALUES ('Peter did not get t', '127.0.0.1', '2025-04-15 07:38:25.663916', '2025-04-15 07:38:25.663916') RETURNING "id" /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (8.2ms)[0m  [1m[35mCOMMIT /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+Completed 201 Created in 1135ms (Views: 0.2ms | ActiveRecord: 37.9ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mSearchQuery Load (0.7ms)[0m  [1m[34mSELECT "search_queries".* FROM "search_queries" WHERE "search_queries"."id" = 140 LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:5:in `perform'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:17:in `block in perform'
+  [1m[36mSearchSummary Load (3.8ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' AND (LENGTH(query) < 19) /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:17:in `block in perform'
+  [1m[36mSearchSummary Load (0.5ms)[0m  [1m[37mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' AND "search_summaries"."query" = 'peter did not get t' LIMIT 1 FOR UPDATE /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:24:in `block in perform'
+  [1m[36mSearchSummary Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "search_summaries" WHERE "search_summaries"."query" = 'peter did not get t' AND "search_summaries"."ip_address" = '127.0.0.1' LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:28:in `block in perform'
+  [1m[36mSearchSummary Create (0.4ms)[0m  [1m[32mINSERT INTO "search_summaries" ("ip_address", "query", "search_count", "last_searched_at", "created_at", "updated_at") VALUES ('127.0.0.1', 'peter did not get t', 2, '2025-04-15 07:38:25.849998', '2025-04-15 07:38:25.854010', '2025-04-15 07:38:25.854010') RETURNING "id" /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:28:in `block in perform'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:13:in `perform'
+Started POST "/searches" for 127.0.0.1 at 2025-04-15 10:38:25 +0300
+  [1m[36mSearchSummary Load (1.6ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' ORDER BY "search_summaries"."search_count" DESC, "search_summaries"."last_searched_at" DESC LIMIT 10 /*action='analytics',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:21:in `map'
+Completed 200 OK in 1371ms (Views: 3.1ms | ActiveRecord: 1.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/analytics" for 127.0.0.1 at 2025-04-15 10:38:26 +0300
+Processing by SearchesController#create as */*
+  Parameters: {"query"=>"Peter did not get ba", "search"=>{"query"=>"Peter did not get ba"}}
+Processing by SearchesController#analytics as */*
+  [1m[36mTRANSACTION (7.5ms)[0m  [1m[35mBEGIN /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mSearchQuery Create (26.2ms)[0m  [1m[32mINSERT INTO "search_queries" ("query", "ip_address", "created_at", "updated_at") VALUES ('Peter did not get', '127.0.0.1', '2025-04-15 07:38:26.882661', '2025-04-15 07:38:26.882661') RETURNING "id" /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (12.4ms)[0m  [1m[35mCOMMIT /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+Completed 201 Created in 1434ms (Views: 0.1ms | ActiveRecord: 46.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mSearchQuery Load (0.4ms)[0m  [1m[34mSELECT "search_queries".* FROM "search_queries" WHERE "search_queries"."id" = 141 LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:5:in `perform'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:17:in `block in perform'
+  [1m[36mSearchSummary Load (2.9ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' AND (LENGTH(query) < 17) /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:17:in `block in perform'
+  [1m[36mSearchSummary Load (0.5ms)[0m  [1m[37mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' AND "search_summaries"."query" = 'peter did not get' LIMIT 1 FOR UPDATE /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:24:in `block in perform'
+  [1m[36mSearchSummary Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "search_summaries" WHERE "search_summaries"."query" = 'peter did not get' AND "search_summaries"."ip_address" = '127.0.0.1' LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:28:in `block in perform'
+  [1m[36mSearchSummary Create (0.4ms)[0m  [1m[32mINSERT INTO "search_summaries" ("ip_address", "query", "search_count", "last_searched_at", "created_at", "updated_at") VALUES ('127.0.0.1', 'peter did not get', 2, '2025-04-15 07:38:27.065384', '2025-04-15 07:38:27.071193', '2025-04-15 07:38:27.071193') RETURNING "id" /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:28:in `block in perform'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:13:in `perform'
+Started POST "/searches" for 127.0.0.1 at 2025-04-15 10:38:27 +0300
+Processing by SearchesController#create as */*
+  Parameters: {"query"=>"Peter did not get bac", "search"=>{"query"=>"Peter did not get bac"}}
+  [1m[36mTRANSACTION (6.8ms)[0m  [1m[35mBEGIN /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mSearchQuery Create (24.7ms)[0m  [1m[32mINSERT INTO "search_queries" ("query", "ip_address", "created_at", "updated_at") VALUES ('Peter did not get ba', '127.0.0.1', '2025-04-15 07:38:27.833592', '2025-04-15 07:38:27.833592') RETURNING "id" /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (11.6ms)[0m  [1m[35mCOMMIT /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+Completed 201 Created in 1557ms (Views: 0.2ms | ActiveRecord: 43.0ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mSearchQuery Load (0.6ms)[0m  [1m[34mSELECT "search_queries".* FROM "search_queries" WHERE "search_queries"."id" = 142 LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:5:in `perform'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:17:in `block in perform'
+  [1m[36mSearchSummary Load (3.9ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' AND (LENGTH(query) < 20) /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:17:in `block in perform'
+  [1m[36mSearchSummary Destroy (0.4ms)[0m  [1m[31mDELETE FROM "search_summaries" WHERE "search_summaries"."id" = 96 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:19:in `block (2 levels) in perform'
+  [1m[36mSearchSummary Load (0.4ms)[0m  [1m[37mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' AND "search_summaries"."query" = 'peter did not get ba' LIMIT 1 FOR UPDATE /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:24:in `block in perform'
+  [1m[36mSearchSummary Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "search_summaries" WHERE "search_summaries"."query" = 'peter did not get ba' AND "search_summaries"."ip_address" = '127.0.0.1' LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:28:in `block in perform'
+  [1m[36mSearchSummary Create (0.4ms)[0m  [1m[32mINSERT INTO "search_summaries" ("ip_address", "query", "search_count", "last_searched_at", "created_at", "updated_at") VALUES ('127.0.0.1', 'peter did not get ba', 2, '2025-04-15 07:38:28.052919', '2025-04-15 07:38:28.059464', '2025-04-15 07:38:28.059464') RETURNING "id" /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:28:in `block in perform'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:13:in `perform'
+  [1m[36mSearchSummary Load (1.8ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' ORDER BY "search_summaries"."search_count" DESC, "search_summaries"."last_searched_at" DESC LIMIT 10 /*action='analytics',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:21:in `map'
+Completed 200 OK in 1512ms (Views: 1.4ms | ActiveRecord: 1.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/searches" for 127.0.0.1 at 2025-04-15 10:38:28 +0300
+Started GET "/analytics" for 127.0.0.1 at 2025-04-15 10:38:28 +0300
+Processing by SearchesController#create as */*
+  Parameters: {"query"=>"Peter did not get back", "search"=>{"query"=>"Peter did not get back"}}
+Processing by SearchesController#analytics as */*
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mBEGIN /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mSearchQuery Create (11.7ms)[0m  [1m[32mINSERT INTO "search_queries" ("query", "ip_address", "created_at", "updated_at") VALUES ('Peter did not get bac', '127.0.0.1', '2025-04-15 07:38:28.976054', '2025-04-15 07:38:28.976054') RETURNING "id" /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (6.3ms)[0m  [1m[35mCOMMIT /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+Completed 201 Created in 1397ms (Views: 0.2ms | ActiveRecord: 20.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mSearchQuery Load (0.6ms)[0m  [1m[34mSELECT "search_queries".* FROM "search_queries" WHERE "search_queries"."id" = 143 LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:5:in `perform'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:17:in `block in perform'
+  [1m[36mSearchSummary Load (5.4ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' AND (LENGTH(query) < 21) /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:17:in `block in perform'
+  [1m[36mSearchSummary Destroy (0.5ms)[0m  [1m[31mDELETE FROM "search_summaries" WHERE "search_summaries"."id" = 97 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:19:in `block (2 levels) in perform'
+  [1m[36mSearchSummary Load (0.5ms)[0m  [1m[37mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' AND "search_summaries"."query" = 'peter did not get bac' LIMIT 1 FOR UPDATE /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:24:in `block in perform'
+  [1m[36mSearchSummary Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "search_summaries" WHERE "search_summaries"."query" = 'peter did not get bac' AND "search_summaries"."ip_address" = '127.0.0.1' LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:28:in `block in perform'
+  [1m[36mSearchSummary Create (0.6ms)[0m  [1m[32mINSERT INTO "search_summaries" ("ip_address", "query", "search_count", "last_searched_at", "created_at", "updated_at") VALUES ('127.0.0.1', 'peter did not get bac', 2, '2025-04-15 07:38:29.186076', '2025-04-15 07:38:29.190928', '2025-04-15 07:38:29.190928') RETURNING "id" /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:28:in `block in perform'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:13:in `perform'
+Started POST "/searches" for 127.0.0.1 at 2025-04-15 10:38:29 +0300
+Processing by SearchesController#create as */*
+  Parameters: {"query"=>"Peter did not get back to me", "search"=>{"query"=>"Peter did not get back to me"}}
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mSearchQuery Create (5.9ms)[0m  [1m[32mINSERT INTO "search_queries" ("query", "ip_address", "created_at", "updated_at") VALUES ('Peter did not get back', '127.0.0.1', '2025-04-15 07:38:30.133721', '2025-04-15 07:38:30.133721') RETURNING "id" /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+Completed 201 Created in 1660ms (Views: 0.3ms | ActiveRecord: 7.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mSearchSummary Load (6.3ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' ORDER BY "search_summaries"."search_count" DESC, "search_summaries"."last_searched_at" DESC LIMIT 10 /*action='analytics',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:21:in `map'
+Completed 200 OK in 1664ms (Views: 1.7ms | ActiveRecord: 6.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/searches" for 127.0.0.1 at 2025-04-15 10:38:30 +0300
+  [1m[36mSearchQuery Load (0.6ms)[0m  [1m[34mSELECT "search_queries".* FROM "search_queries" WHERE "search_queries"."id" = 144 LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:5:in `perform'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:17:in `block in perform'
+  [1m[36mSearchSummary Load (5.4ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' AND (LENGTH(query) < 22) /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:17:in `block in perform'
+  [1m[36mSearchSummary Destroy (0.4ms)[0m  [1m[31mDELETE FROM "search_summaries" WHERE "search_summaries"."id" = 98 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:19:in `block (2 levels) in perform'
+  [1m[36mSearchSummary Load (0.4ms)[0m  [1m[37mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' AND "search_summaries"."query" = 'peter did not get back' LIMIT 1 FOR UPDATE /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:24:in `block in perform'
+  [1m[36mSearchSummary Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "search_summaries" WHERE "search_summaries"."query" = 'peter did not get back' AND "search_summaries"."ip_address" = '127.0.0.1' LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:28:in `block in perform'
+  [1m[36mSearchSummary Create (0.4ms)[0m  [1m[32mINSERT INTO "search_summaries" ("ip_address", "query", "search_count", "last_searched_at", "created_at", "updated_at") VALUES ('127.0.0.1', 'peter did not get back', 2, '2025-04-15 07:38:30.300983', '2025-04-15 07:38:30.305206', '2025-04-15 07:38:30.305206') RETURNING "id" /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:28:in `block in perform'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:13:in `perform'
+Started GET "/analytics" for 127.0.0.1 at 2025-04-15 10:38:30 +0300
+Processing by SearchesController#create as */*
+  Parameters: {"query"=>"Peter did not get back to me in", "search"=>{"query"=>"Peter did not get back to me in"}}
+Processing by SearchesController#analytics as */*
+  [1m[36mTRANSACTION (8.3ms)[0m  [1m[35mBEGIN /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mSearchQuery Create (24.4ms)[0m  [1m[32mINSERT INTO "search_queries" ("query", "ip_address", "created_at", "updated_at") VALUES ('Peter did not get back to me', '127.0.0.1', '2025-04-15 07:38:31.069352', '2025-04-15 07:38:31.069352') RETURNING "id" /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (8.5ms)[0m  [1m[35mCOMMIT /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+Completed 201 Created in 1356ms (Views: 0.2ms | ActiveRecord: 41.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mSearchQuery Load (0.5ms)[0m  [1m[34mSELECT "search_queries".* FROM "search_queries" WHERE "search_queries"."id" = 145 LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:5:in `perform'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:17:in `block in perform'
+  [1m[36mSearchSummary Load (3.6ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' AND (LENGTH(query) < 28) /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:17:in `block in perform'
+  [1m[36mSearchSummary Destroy (0.4ms)[0m  [1m[31mDELETE FROM "search_summaries" WHERE "search_summaries"."id" = 99 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:19:in `block (2 levels) in perform'
+  [1m[36mSearchSummary Load (0.4ms)[0m  [1m[37mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' AND "search_summaries"."query" = 'peter did not get back to me' LIMIT 1 FOR UPDATE /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:24:in `block in perform'
+  [1m[36mSearchSummary Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "search_summaries" WHERE "search_summaries"."query" = 'peter did not get back to me' AND "search_summaries"."ip_address" = '127.0.0.1' LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:28:in `block in perform'
+  [1m[36mSearchSummary Create (0.4ms)[0m  [1m[32mINSERT INTO "search_summaries" ("ip_address", "query", "search_count", "last_searched_at", "created_at", "updated_at") VALUES ('127.0.0.1', 'peter did not get back to me', 2, '2025-04-15 07:38:31.262810', '2025-04-15 07:38:31.267065', '2025-04-15 07:38:31.267065') RETURNING "id" /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:28:in `block in perform'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:13:in `perform'
+Started POST "/searches" for 127.0.0.1 at 2025-04-15 10:38:31 +0300
+  [1m[36mTRANSACTION (5.3ms)[0m  [1m[35mBEGIN /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mSearchQuery Create (22.6ms)[0m  [1m[32mINSERT INTO "search_queries" ("query", "ip_address", "created_at", "updated_at") VALUES ('Peter did not get back to me in', '127.0.0.1', '2025-04-15 07:38:31.878410', '2025-04-15 07:38:31.878410') RETURNING "id" /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[35mCOMMIT /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+Completed 201 Created in 1488ms (Views: 0.6ms | ActiveRecord: 31.2ms (1 query, 0 cached) | GC: 990.3ms)
+
+
+  [1m[36mSearchQuery Load (0.6ms)[0m  [1m[34mSELECT "search_queries".* FROM "search_queries" WHERE "search_queries"."id" = 146 LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:5:in `perform'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='RealTmeSearchEngine'*/[0m
+Processing by SearchesController#create as */*
+  ↳ app/sidekiq/summarize_search_job.rb:17:in `block in perform'
+  Parameters: {"query"=>"Peter did not get back to me in time", "search"=>{"query"=>"Peter did not get back to me in time"}}
+  [1m[36mSearchSummary Load (5.5ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' AND (LENGTH(query) < 31) /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:17:in `block in perform'
+  [1m[36mSearchSummary Destroy (0.5ms)[0m  [1m[31mDELETE FROM "search_summaries" WHERE "search_summaries"."id" = 100 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:19:in `block (2 levels) in perform'
+  [1m[36mSearchSummary Load (0.5ms)[0m  [1m[37mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' AND "search_summaries"."query" = 'peter did not get back to me in' LIMIT 1 FOR UPDATE /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:24:in `block in perform'
+  [1m[36mSearchSummary Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "search_summaries" WHERE "search_summaries"."query" = 'peter did not get back to me in' AND "search_summaries"."ip_address" = '127.0.0.1' LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:28:in `block in perform'
+  [1m[36mSearchSummary Create (0.5ms)[0m  [1m[32mINSERT INTO "search_summaries" ("ip_address", "query", "search_count", "last_searched_at", "created_at", "updated_at") VALUES ('127.0.0.1', 'peter did not get back to me in', 2, '2025-04-15 07:38:32.072521', '2025-04-15 07:38:32.078355', '2025-04-15 07:38:32.078355') RETURNING "id" /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:28:in `block in perform'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:13:in `perform'
+  [1m[36mSearchSummary Load (0.8ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' ORDER BY "search_summaries"."search_count" DESC, "search_summaries"."last_searched_at" DESC LIMIT 10 /*action='analytics',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:21:in `map'
+Completed 200 OK in 1468ms (Views: 4.6ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 990.3ms)
+
+
+Started GET "/analytics" for 127.0.0.1 at 2025-04-15 10:38:32 +0300
+Processing by SearchesController#analytics as */*
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mBEGIN /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mSearchQuery Create (12.4ms)[0m  [1m[32mINSERT INTO "search_queries" ("query", "ip_address", "created_at", "updated_at") VALUES ('Peter did not get back to me in time', '127.0.0.1', '2025-04-15 07:38:33.060707', '2025-04-15 07:38:33.060707') RETURNING "id" /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+Completed 201 Created in 1041ms (Views: 0.1ms | ActiveRecord: 15.0ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+  [1m[36mSearchQuery Load (0.5ms)[0m  [1m[34mSELECT "search_queries".* FROM "search_queries" WHERE "search_queries"."id" = 147 LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:5:in `perform'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:17:in `block in perform'
+  [1m[36mSearchSummary Load (2.5ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' AND (LENGTH(query) < 36) /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:17:in `block in perform'
+  [1m[36mSearchSummary Destroy (0.4ms)[0m  [1m[31mDELETE FROM "search_summaries" WHERE "search_summaries"."id" = 101 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:19:in `block (2 levels) in perform'
+  [1m[36mSearchSummary Load (0.4ms)[0m  [1m[37mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' AND "search_summaries"."query" = 'peter did not get back to me in time' LIMIT 1 FOR UPDATE /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:24:in `block in perform'
+  [1m[36mSearchSummary Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "search_summaries" WHERE "search_summaries"."query" = 'peter did not get back to me in time' AND "search_summaries"."ip_address" = '127.0.0.1' LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:28:in `block in perform'
+  [1m[36mSearchSummary Create (0.3ms)[0m  [1m[32mINSERT INTO "search_summaries" ("ip_address", "query", "search_count", "last_searched_at", "created_at", "updated_at") VALUES ('127.0.0.1', 'peter did not get back to me in time', 2, '2025-04-15 07:38:33.227460', '2025-04-15 07:38:33.231631', '2025-04-15 07:38:33.231631') RETURNING "id" /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:28:in `block in perform'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:13:in `perform'
+  [1m[36mSearchSummary Load (2.9ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' ORDER BY "search_summaries"."search_count" DESC, "search_summaries"."last_searched_at" DESC LIMIT 10 /*action='analytics',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:21:in `map'
+Completed 200 OK in 1080ms (Views: 1.5ms | ActiveRecord: 2.9ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/analytics" for 127.0.0.1 at 2025-04-15 10:38:33 +0300
+Processing by SearchesController#analytics as */*
+  [1m[36mSearchSummary Load (0.9ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' ORDER BY "search_summaries"."search_count" DESC, "search_summaries"."last_searched_at" DESC LIMIT 10 /*action='analytics',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:21:in `map'
+Completed 200 OK in 703ms (Views: 1.5ms | ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/analytics" for 127.0.0.1 at 2025-04-15 10:38:34 +0300
+Processing by SearchesController#analytics as */*
+  [1m[36mSearchSummary Load (1.7ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' ORDER BY "search_summaries"."search_count" DESC, "search_summaries"."last_searched_at" DESC LIMIT 10 /*action='analytics',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:21:in `map'
+Completed 200 OK in 611ms (Views: 3.0ms | ActiveRecord: 1.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/analytics" for 127.0.0.1 at 2025-04-15 10:38:35 +0300
+Processing by SearchesController#analytics as */*
+  [1m[36mSearchSummary Load (0.7ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' ORDER BY "search_summaries"."search_count" DESC, "search_summaries"."last_searched_at" DESC LIMIT 10 /*action='analytics',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:21:in `map'
+Completed 200 OK in 595ms (Views: 3.0ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/analytics" for 127.0.0.1 at 2025-04-15 10:38:35 +0300
+Processing by SearchesController#analytics as */*
+  [1m[36mSearchSummary Load (0.7ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' ORDER BY "search_summaries"."search_count" DESC, "search_summaries"."last_searched_at" DESC LIMIT 10 /*action='analytics',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:21:in `map'
+Completed 200 OK in 609ms (Views: 3.6ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/analytics" for 127.0.0.1 at 2025-04-15 10:38:36 +0300
+Processing by SearchesController#analytics as */*
+  [1m[36mSearchSummary Load (0.6ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' ORDER BY "search_summaries"."search_count" DESC, "search_summaries"."last_searched_at" DESC LIMIT 10 /*action='analytics',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:21:in `map'
+Completed 200 OK in 610ms (Views: 2.9ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/searches" for 127.0.0.1 at 2025-04-15 10:38:48 +0300
+Processing by SearchesController#create as */*
+  Parameters: {"query"=>"Peter did not get back to me in time", "search"=>{"query"=>"Peter did not get back to me in time"}}
+Started POST "/searches" for 127.0.0.1 at 2025-04-15 10:38:48 +0300
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mSearchQuery Create (4.0ms)[0m  [1m[32mINSERT INTO "search_queries" ("query", "ip_address", "created_at", "updated_at") VALUES ('Peter did not get back to me in time', '127.0.0.1', '2025-04-15 07:38:49.136696', '2025-04-15 07:38:49.136696') RETURNING "id" /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+Processing by SearchesController#create as */*
+  Parameters: {"query"=>"Peter did not get back to me in time be", "search"=>{"query"=>"Peter did not get back to me in time be"}}
+Completed 201 Created in 711ms (Views: 0.2ms | ActiveRecord: 4.9ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/analytics" for 127.0.0.1 at 2025-04-15 10:38:49 +0300
+  [1m[36mSearchQuery Load (1.1ms)[0m  [1m[34mSELECT "search_queries".* FROM "search_queries" WHERE "search_queries"."id" = 148 LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:5:in `perform'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:17:in `block in perform'
+  [1m[36mSearchSummary Load (5.9ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' AND (LENGTH(query) < 36) /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:17:in `block in perform'
+  [1m[36mSearchSummary Load (0.5ms)[0m  [1m[37mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' AND "search_summaries"."query" = 'peter did not get back to me in time' LIMIT 1 FOR UPDATE /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:24:in `block in perform'
+  [1m[36mSearchSummary Update (1.1ms)[0m  [1m[33mUPDATE "search_summaries" SET "search_count" = 3, "last_searched_at" = '2025-04-15 07:38:49.304480', "updated_at" = '2025-04-15 07:38:49.314672' WHERE "search_summaries"."id" = 102 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:28:in `block in perform'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:13:in `perform'
+Processing by SearchesController#analytics as */*
+Started POST "/searches" for 127.0.0.1 at 2025-04-15 10:38:49 +0300
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mSearchQuery Create (7.5ms)[0m  [1m[32mINSERT INTO "search_queries" ("query", "ip_address", "created_at", "updated_at") VALUES ('Peter did not get back to me in time be', '127.0.0.1', '2025-04-15 07:38:50.239354', '2025-04-15 07:38:50.239354') RETURNING "id" /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[35mCOMMIT /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+Completed 201 Created in 1106ms (Views: 0.2ms | ActiveRecord: 11.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Processing by SearchesController#create as */*
+  Parameters: {"query"=>"Peter did not get back to me in time becau", "search"=>{"query"=>"Peter did not get back to me in time becau"}}
+  [1m[36mSearchQuery Load (0.8ms)[0m  [1m[34mSELECT "search_queries".* FROM "search_queries" WHERE "search_queries"."id" = 149 LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:5:in `perform'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:17:in `block in perform'
+  [1m[36mSearchSummary Load (6.2ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' AND (LENGTH(query) < 39) /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:17:in `block in perform'
+  [1m[36mSearchSummary Destroy (0.3ms)[0m  [1m[31mDELETE FROM "search_summaries" WHERE "search_summaries"."id" = 102 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:19:in `block (2 levels) in perform'
+  [1m[36mSearchSummary Load (0.4ms)[0m  [1m[37mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' AND "search_summaries"."query" = 'peter did not get back to me in time be' LIMIT 1 FOR UPDATE /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:24:in `block in perform'
+  [1m[36mSearchSummary Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "search_summaries" WHERE "search_summaries"."query" = 'peter did not get back to me in time be' AND "search_summaries"."ip_address" = '127.0.0.1' LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:28:in `block in perform'
+  [1m[36mSearchSummary Create (1.1ms)[0m  [1m[32mINSERT INTO "search_summaries" ("ip_address", "query", "search_count", "last_searched_at", "created_at", "updated_at") VALUES ('127.0.0.1', 'peter did not get back to me in time be', 2, '2025-04-15 07:38:50.410586', '2025-04-15 07:38:50.414242', '2025-04-15 07:38:50.414242') RETURNING "id" /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:28:in `block in perform'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:13:in `perform'
+  [1m[36mSearchSummary Load (2.5ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' ORDER BY "search_summaries"."search_count" DESC, "search_summaries"."last_searched_at" DESC LIMIT 10 /*action='analytics',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:21:in `map'
+Completed 200 OK in 1202ms (Views: 1.6ms | ActiveRecord: 2.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/analytics" for 127.0.0.1 at 2025-04-15 10:38:50 +0300
+Started POST "/searches" for 127.0.0.1 at 2025-04-15 10:38:50 +0300
+Processing by SearchesController#analytics as */*
+Processing by SearchesController#create as */*
+  Parameters: {"query"=>"Peter did not get back to me in time because", "search"=>{"query"=>"Peter did not get back to me in time because"}}
+  [1m[36mTRANSACTION (3.8ms)[0m  [1m[35mBEGIN /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mSearchQuery Create (17.2ms)[0m  [1m[32mINSERT INTO "search_queries" ("query", "ip_address", "created_at", "updated_at") VALUES ('Peter did not get back to me in time becau', '127.0.0.1', '2025-04-15 07:38:51.464318', '2025-04-15 07:38:51.464318') RETURNING "id" /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (9.5ms)[0m  [1m[35mCOMMIT /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+Completed 201 Created in 1167ms (Views: 0.2ms | ActiveRecord: 30.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mSearchQuery Load (0.5ms)[0m  [1m[34mSELECT "search_queries".* FROM "search_queries" WHERE "search_queries"."id" = 150 LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:5:in `perform'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:17:in `block in perform'
+  [1m[36mSearchSummary Load (3.5ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' AND (LENGTH(query) < 42) /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:17:in `block in perform'
+  [1m[36mSearchSummary Destroy (0.3ms)[0m  [1m[31mDELETE FROM "search_summaries" WHERE "search_summaries"."id" = 103 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:19:in `block (2 levels) in perform'
+  [1m[36mSearchSummary Load (0.4ms)[0m  [1m[37mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' AND "search_summaries"."query" = 'peter did not get back to me in time becau' LIMIT 1 FOR UPDATE /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:24:in `block in perform'
+  [1m[36mSearchSummary Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "search_summaries" WHERE "search_summaries"."query" = 'peter did not get back to me in time becau' AND "search_summaries"."ip_address" = '127.0.0.1' LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:28:in `block in perform'
+  [1m[36mSearchSummary Create (0.5ms)[0m  [1m[32mINSERT INTO "search_summaries" ("ip_address", "query", "search_count", "last_searched_at", "created_at", "updated_at") VALUES ('127.0.0.1', 'peter did not get back to me in time becau', 2, '2025-04-15 07:38:51.652598', '2025-04-15 07:38:51.657427', '2025-04-15 07:38:51.657427') RETURNING "id" /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:28:in `block in perform'
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[35mCOMMIT /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:13:in `perform'
+Started POST "/searches" for 127.0.0.1 at 2025-04-15 10:38:51 +0300
+Processing by SearchesController#create as */*
+  Parameters: {"query"=>"Peter did not get back to me in time because he", "search"=>{"query"=>"Peter did not get back to me in time because he"}}
+  [1m[36mSearchSummary Load (7.3ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' ORDER BY "search_summaries"."search_count" DESC, "search_summaries"."last_searched_at" DESC LIMIT 10 /*action='analytics',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:21:in `map'
+Completed 200 OK in 1556ms (Views: 3.8ms | ActiveRecord: 7.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/analytics" for 127.0.0.1 at 2025-04-15 10:38:52 +0300
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[35mBEGIN /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mSearchQuery Create (10.6ms)[0m  [1m[32mINSERT INTO "search_queries" ("query", "ip_address", "created_at", "updated_at") VALUES ('Peter did not get back to me in time because', '127.0.0.1', '2025-04-15 07:38:52.566400', '2025-04-15 07:38:52.566400') RETURNING "id" /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (9.5ms)[0m  [1m[35mCOMMIT /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+Completed 201 Created in 1613ms (Views: 0.2ms | ActiveRecord: 22.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Processing by SearchesController#analytics as */*
+  [1m[36mSearchQuery Load (0.5ms)[0m  [1m[34mSELECT "search_queries".* FROM "search_queries" WHERE "search_queries"."id" = 151 LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:5:in `perform'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:17:in `block in perform'
+  [1m[36mSearchSummary Load (5.4ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' AND (LENGTH(query) < 44) /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:17:in `block in perform'
+  [1m[36mSearchSummary Destroy (0.5ms)[0m  [1m[31mDELETE FROM "search_summaries" WHERE "search_summaries"."id" = 104 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:19:in `block (2 levels) in perform'
+  [1m[36mSearchSummary Load (0.4ms)[0m  [1m[37mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' AND "search_summaries"."query" = 'peter did not get back to me in time because' LIMIT 1 FOR UPDATE /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:24:in `block in perform'
+  [1m[36mSearchSummary Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "search_summaries" WHERE "search_summaries"."query" = 'peter did not get back to me in time because' AND "search_summaries"."ip_address" = '127.0.0.1' LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:28:in `block in perform'
+  [1m[36mSearchSummary Create (0.5ms)[0m  [1m[32mINSERT INTO "search_summaries" ("ip_address", "query", "search_count", "last_searched_at", "created_at", "updated_at") VALUES ('127.0.0.1', 'peter did not get back to me in time because', 2, '2025-04-15 07:38:52.746519', '2025-04-15 07:38:52.749395', '2025-04-15 07:38:52.749395') RETURNING "id" /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:28:in `block in perform'
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[35mCOMMIT /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:13:in `perform'
+Started POST "/searches" for 127.0.0.1 at 2025-04-15 10:38:52 +0300
+Processing by SearchesController#create as */*
+  Parameters: {"query"=>"Peter did not get back to me in time because he", "search"=>{"query"=>"Peter did not get back to me in time because he"}}
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[35mBEGIN /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mSearchQuery Create (16.8ms)[0m  [1m[32mINSERT INTO "search_queries" ("query", "ip_address", "created_at", "updated_at") VALUES ('Peter did not get back to me in time because he', '127.0.0.1', '2025-04-15 07:38:53.559265', '2025-04-15 07:38:53.559265') RETURNING "id" /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (12.6ms)[0m  [1m[35mCOMMIT /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+Completed 201 Created in 1398ms (Views: 0.2ms | ActiveRecord: 36.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mSearchQuery Load (0.4ms)[0m  [1m[34mSELECT "search_queries".* FROM "search_queries" WHERE "search_queries"."id" = 152 LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:5:in `perform'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:17:in `block in perform'
+  [1m[36mSearchSummary Load (5.4ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' AND (LENGTH(query) < 47) /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:17:in `block in perform'
+  [1m[36mSearchSummary Destroy (0.4ms)[0m  [1m[31mDELETE FROM "search_summaries" WHERE "search_summaries"."id" = 105 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:19:in `block (2 levels) in perform'
+  [1m[36mSearchSummary Load (0.4ms)[0m  [1m[37mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' AND "search_summaries"."query" = 'peter did not get back to me in time because he' LIMIT 1 FOR UPDATE /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:24:in `block in perform'
+  [1m[36mSearchSummary Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "search_summaries" WHERE "search_summaries"."query" = 'peter did not get back to me in time because he' AND "search_summaries"."ip_address" = '127.0.0.1' LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:28:in `block in perform'
+  [1m[36mSearchSummary Create (0.4ms)[0m  [1m[32mINSERT INTO "search_summaries" ("ip_address", "query", "search_count", "last_searched_at", "created_at", "updated_at") VALUES ('127.0.0.1', 'peter did not get back to me in time because he', 2, '2025-04-15 07:38:53.744262', '2025-04-15 07:38:53.750357', '2025-04-15 07:38:53.750357') RETURNING "id" /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:28:in `block in perform'
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[35mCOMMIT /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:13:in `perform'
+Started POST "/searches" for 127.0.0.1 at 2025-04-15 10:38:53 +0300
+  [1m[36mSearchSummary Load (4.0ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' ORDER BY "search_summaries"."search_count" DESC, "search_summaries"."last_searched_at" DESC LIMIT 10 /*action='analytics',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:21:in `map'
+Completed 200 OK in 1452ms (Views: 2.6ms | ActiveRecord: 4.0ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/analytics" for 127.0.0.1 at 2025-04-15 10:38:54 +0300
+Processing by SearchesController#create as */*
+  Parameters: {"query"=>"Peter did not get back to me in time because he was", "search"=>{"query"=>"Peter did not get back to me in time because he was"}}
+Processing by SearchesController#analytics as */*
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[35mBEGIN /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mSearchQuery Create (11.0ms)[0m  [1m[32mINSERT INTO "search_queries" ("query", "ip_address", "created_at", "updated_at") VALUES ('Peter did not get back to me in time because he', '127.0.0.1', '2025-04-15 07:38:54.646381', '2025-04-15 07:38:54.646381') RETURNING "id" /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (5.9ms)[0m  [1m[35mCOMMIT /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+Completed 201 Created in 1505ms (Views: 0.1ms | ActiveRecord: 20.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mSearchQuery Load (0.6ms)[0m  [1m[34mSELECT "search_queries".* FROM "search_queries" WHERE "search_queries"."id" = 153 LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:5:in `perform'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:17:in `block in perform'
+  [1m[36mSearchSummary Load (3.1ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' AND (LENGTH(query) < 47) /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:17:in `block in perform'
+  [1m[36mSearchSummary Load (0.5ms)[0m  [1m[37mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' AND "search_summaries"."query" = 'peter did not get back to me in time because he' LIMIT 1 FOR UPDATE /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:24:in `block in perform'
+  [1m[36mSearchSummary Update (0.5ms)[0m  [1m[33mUPDATE "search_summaries" SET "search_count" = 3, "last_searched_at" = '2025-04-15 07:38:54.808294', "updated_at" = '2025-04-15 07:38:54.808628' WHERE "search_summaries"."id" = 106 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:28:in `block in perform'
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[35mCOMMIT /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:13:in `perform'
+Started POST "/searches" for 127.0.0.1 at 2025-04-15 10:38:54 +0300
+Processing by SearchesController#create as */*
+  Parameters: {"query"=>"Peter did not get back to me in time because he was a", "search"=>{"query"=>"Peter did not get back to me in time because he was a"}}
+  [1m[36mTRANSACTION (7.6ms)[0m  [1m[35mBEGIN /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mSearchQuery Create (18.9ms)[0m  [1m[32mINSERT INTO "search_queries" ("query", "ip_address", "created_at", "updated_at") VALUES ('Peter did not get back to me in time because he was', '127.0.0.1', '2025-04-15 07:38:55.688769', '2025-04-15 07:38:55.688769') RETURNING "id" /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (15.6ms)[0m  [1m[35mCOMMIT /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+Completed 201 Created in 1463ms (Views: 0.2ms | ActiveRecord: 42.0ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mSearchQuery Load (0.6ms)[0m  [1m[34mSELECT "search_queries".* FROM "search_queries" WHERE "search_queries"."id" = 154 LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:5:in `perform'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:17:in `block in perform'
+  [1m[36mSearchSummary Load (5.2ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' AND (LENGTH(query) < 51) /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:17:in `block in perform'
+  [1m[36mSearchSummary Destroy (0.4ms)[0m  [1m[31mDELETE FROM "search_summaries" WHERE "search_summaries"."id" = 106 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:19:in `block (2 levels) in perform'
+  [1m[36mSearchSummary Load (0.4ms)[0m  [1m[37mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' AND "search_summaries"."query" = 'peter did not get back to me in time because he was' LIMIT 1 FOR UPDATE /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:24:in `block in perform'
+  [1m[36mSearchSummary Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "search_summaries" WHERE "search_summaries"."query" = 'peter did not get back to me in time because he was' AND "search_summaries"."ip_address" = '127.0.0.1' LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:28:in `block in perform'
+  [1m[36mSearchSummary Create (0.4ms)[0m  [1m[32mINSERT INTO "search_summaries" ("ip_address", "query", "search_count", "last_searched_at", "created_at", "updated_at") VALUES ('127.0.0.1', 'peter did not get back to me in time because he was', 2, '2025-04-15 07:38:55.880129', '2025-04-15 07:38:55.884031', '2025-04-15 07:38:55.884031') RETURNING "id" /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:28:in `block in perform'
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[35mCOMMIT /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:13:in `perform'
+  [1m[36mSearchSummary Load (1.9ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' ORDER BY "search_summaries"."search_count" DESC, "search_summaries"."last_searched_at" DESC LIMIT 10 /*action='analytics',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:21:in `map'
+Completed 200 OK in 1487ms (Views: 9.5ms | ActiveRecord: 1.9ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/searches" for 127.0.0.1 at 2025-04-15 10:38:56 +0300
+Started GET "/analytics" for 127.0.0.1 at 2025-04-15 10:38:56 +0300
+Processing by SearchesController#create as */*
+  Parameters: {"query"=>"Peter did not get back to me in time because he was at", "search"=>{"query"=>"Peter did not get back to me in time because he was at"}}
+Processing by SearchesController#analytics as */*
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[35mBEGIN /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mSearchQuery Create (16.5ms)[0m  [1m[32mINSERT INTO "search_queries" ("query", "ip_address", "created_at", "updated_at") VALUES ('Peter did not get back to me in time because he was a', '127.0.0.1', '2025-04-15 07:38:56.778052', '2025-04-15 07:38:56.778052') RETURNING "id" /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (10.0ms)[0m  [1m[35mCOMMIT /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+Completed 201 Created in 1540ms (Views: 0.2ms | ActiveRecord: 29.6ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+  [1m[36mSearchQuery Load (0.5ms)[0m  [1m[34mSELECT "search_queries".* FROM "search_queries" WHERE "search_queries"."id" = 155 LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:5:in `perform'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:17:in `block in perform'
+  [1m[36mSearchSummary Load (3.5ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' AND (LENGTH(query) < 53) /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:17:in `block in perform'
+  [1m[36mSearchSummary Destroy (0.3ms)[0m  [1m[31mDELETE FROM "search_summaries" WHERE "search_summaries"."id" = 107 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:19:in `block (2 levels) in perform'
+  [1m[36mSearchSummary Load (0.5ms)[0m  [1m[37mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' AND "search_summaries"."query" = 'peter did not get back to me in time because he was a' LIMIT 1 FOR UPDATE /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:24:in `block in perform'
+  [1m[36mSearchSummary Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "search_summaries" WHERE "search_summaries"."query" = 'peter did not get back to me in time because he was a' AND "search_summaries"."ip_address" = '127.0.0.1' LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:28:in `block in perform'
+  [1m[36mSearchSummary Create (0.5ms)[0m  [1m[32mINSERT INTO "search_summaries" ("ip_address", "query", "search_count", "last_searched_at", "created_at", "updated_at") VALUES ('127.0.0.1', 'peter did not get back to me in time because he was a', 2, '2025-04-15 07:38:56.940800', '2025-04-15 07:38:56.945104', '2025-04-15 07:38:56.945104') RETURNING "id" /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:28:in `block in perform'
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[35mCOMMIT /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:13:in `perform'
+Started POST "/searches" for 127.0.0.1 at 2025-04-15 10:38:57 +0300
+Processing by SearchesController#create as */*
+  Parameters: {"query"=>"Peter did not get back to me in time because he was at his", "search"=>{"query"=>"Peter did not get back to me in time because he was at his"}}
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mSearchQuery Create (5.5ms)[0m  [1m[32mINSERT INTO "search_queries" ("query", "ip_address", "created_at", "updated_at") VALUES ('Peter did not get back to me in time because he was at', '127.0.0.1', '2025-04-15 07:38:57.857163', '2025-04-15 07:38:57.857163') RETURNING "id" /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (9.0ms)[0m  [1m[35mCOMMIT /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+Completed 201 Created in 1479ms (Views: 0.2ms | ActiveRecord: 15.2ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+  [1m[36mSearchQuery Load (0.6ms)[0m  [1m[34mSELECT "search_queries".* FROM "search_queries" WHERE "search_queries"."id" = 156 LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:5:in `perform'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:17:in `block in perform'
+  [1m[36mSearchSummary Load (4.4ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' AND (LENGTH(query) < 54) /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:17:in `block in perform'
+  [1m[36mSearchSummary Destroy (0.5ms)[0m  [1m[31mDELETE FROM "search_summaries" WHERE "search_summaries"."id" = 108 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:19:in `block (2 levels) in perform'
+  [1m[36mSearchSummary Load (0.4ms)[0m  [1m[37mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' AND "search_summaries"."query" = 'peter did not get back to me in time because he was at' LIMIT 1 FOR UPDATE /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:24:in `block in perform'
+  [1m[36mSearchSummary Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "search_summaries" WHERE "search_summaries"."query" = 'peter did not get back to me in time because he was at' AND "search_summaries"."ip_address" = '127.0.0.1' LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:28:in `block in perform'
+  [1m[36mSearchSummary Create (0.4ms)[0m  [1m[32mINSERT INTO "search_summaries" ("ip_address", "query", "search_count", "last_searched_at", "created_at", "updated_at") VALUES ('127.0.0.1', 'peter did not get back to me in time because he was at', 2, '2025-04-15 07:38:58.037261', '2025-04-15 07:38:58.041128', '2025-04-15 07:38:58.041128') RETURNING "id" /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:28:in `block in perform'
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[35mCOMMIT /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:13:in `perform'
+  [1m[36mSearchSummary Load (4.4ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' ORDER BY "search_summaries"."search_count" DESC, "search_summaries"."last_searched_at" DESC LIMIT 10 /*action='analytics',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:21:in `map'
+Completed 200 OK in 1672ms (Views: 1.4ms | ActiveRecord: 25.0ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started POST "/searches" for 127.0.0.1 at 2025-04-15 10:38:58 +0300
+Started GET "/analytics" for 127.0.0.1 at 2025-04-15 10:38:58 +0300
+Processing by SearchesController#create as */*
+  Parameters: {"query"=>"Peter did not get back to me in time because he was at his mo", "search"=>{"query"=>"Peter did not get back to me in time because he was at his mo"}}
+Processing by SearchesController#analytics as */*
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[35mBEGIN /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mSearchQuery Create (12.2ms)[0m  [1m[32mINSERT INTO "search_queries" ("query", "ip_address", "created_at", "updated_at") VALUES ('Peter did not get back to me in time because he was at his', '127.0.0.1', '2025-04-15 07:38:58.735556', '2025-04-15 07:38:58.735556') RETURNING "id" /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (5.7ms)[0m  [1m[35mCOMMIT /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+Completed 201 Created in 1261ms (Views: 0.1ms | ActiveRecord: 20.9ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mSearchQuery Load (0.5ms)[0m  [1m[34mSELECT "search_queries".* FROM "search_queries" WHERE "search_queries"."id" = 157 LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:5:in `perform'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:17:in `block in perform'
+  [1m[36mSearchSummary Load (3.3ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' AND (LENGTH(query) < 58) /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:17:in `block in perform'
+  [1m[36mSearchSummary Destroy (0.4ms)[0m  [1m[31mDELETE FROM "search_summaries" WHERE "search_summaries"."id" = 109 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:19:in `block (2 levels) in perform'
+  [1m[36mSearchSummary Load (0.4ms)[0m  [1m[37mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' AND "search_summaries"."query" = 'peter did not get back to me in time because he was at his' LIMIT 1 FOR UPDATE /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:24:in `block in perform'
+  [1m[36mSearchSummary Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "search_summaries" WHERE "search_summaries"."query" = 'peter did not get back to me in time because he was at his' AND "search_summaries"."ip_address" = '127.0.0.1' LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:28:in `block in perform'
+  [1m[36mSearchSummary Create (0.4ms)[0m  [1m[32mINSERT INTO "search_summaries" ("ip_address", "query", "search_count", "last_searched_at", "created_at", "updated_at") VALUES ('127.0.0.1', 'peter did not get back to me in time because he was at his', 2, '2025-04-15 07:38:58.915014', '2025-04-15 07:38:58.924763', '2025-04-15 07:38:58.924763') RETURNING "id" /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:28:in `block in perform'
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[35mCOMMIT /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:13:in `perform'
+Started POST "/searches" for 127.0.0.1 at 2025-04-15 10:38:59 +0300
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mSearchQuery Create (6.1ms)[0m  [1m[32mINSERT INTO "search_queries" ("query", "ip_address", "created_at", "updated_at") VALUES ('Peter did not get back to me in time because he was at his mo', '127.0.0.1', '2025-04-15 07:38:59.783711', '2025-04-15 07:38:59.783711') RETURNING "id" /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mSearchSummary Load (0.9ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' ORDER BY "search_summaries"."search_count" DESC, "search_summaries"."last_searched_at" DESC LIMIT 10 /*action='analytics',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:21:in `map'
+Completed 200 OK in 1344ms (Views: 1.6ms | ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mTRANSACTION (13.5ms)[0m  [1m[35mCOMMIT /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+Completed 201 Created in 1390ms (Views: 0.1ms | ActiveRecord: 20.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/analytics" for 127.0.0.1 at 2025-04-15 10:38:59 +0300
+  [1m[36mSearchQuery Load (0.6ms)[0m  [1m[34mSELECT "search_queries".* FROM "search_queries" WHERE "search_queries"."id" = 158 LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:5:in `perform'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:17:in `block in perform'
+  [1m[36mSearchSummary Load (5.7ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' AND (LENGTH(query) < 61) /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:17:in `block in perform'
+  [1m[36mSearchSummary Destroy (0.4ms)[0m  [1m[31mDELETE FROM "search_summaries" WHERE "search_summaries"."id" = 110 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:19:in `block (2 levels) in perform'
+  [1m[36mSearchSummary Load (0.4ms)[0m  [1m[37mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' AND "search_summaries"."query" = 'peter did not get back to me in time because he was at his mo' LIMIT 1 FOR UPDATE /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:24:in `block in perform'
+  [1m[36mSearchSummary Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "search_summaries" WHERE "search_summaries"."query" = 'peter did not get back to me in time because he was at his mo' AND "search_summaries"."ip_address" = '127.0.0.1' LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:28:in `block in perform'
+Processing by SearchesController#create as */*
+  Parameters: {"query"=>"Peter did not get back to me in time because he was at his mom", "search"=>{"query"=>"Peter did not get back to me in time because he was at his mom"}}
+  [1m[36mSearchSummary Create (0.5ms)[0m  [1m[32mINSERT INTO "search_summaries" ("ip_address", "query", "search_count", "last_searched_at", "created_at", "updated_at") VALUES ('127.0.0.1', 'peter did not get back to me in time because he was at his mo', 2, '2025-04-15 07:38:59.969579', '2025-04-15 07:38:59.974115', '2025-04-15 07:38:59.974115') RETURNING "id" /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:28:in `block in perform'
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[35mCOMMIT /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:13:in `perform'
+Processing by SearchesController#analytics as */*
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mBEGIN /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mSearchQuery Create (8.1ms)[0m  [1m[32mINSERT INTO "search_queries" ("query", "ip_address", "created_at", "updated_at") VALUES ('Peter did not get back to me in time because he was at his mom', '127.0.0.1', '2025-04-15 07:39:01.038791', '2025-04-15 07:39:01.038791') RETURNING "id" /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (7.7ms)[0m  [1m[35mCOMMIT /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+Completed 201 Created in 1093ms (Views: 0.1ms | ActiveRecord: 17.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mSearchSummary Load (0.9ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' ORDER BY "search_summaries"."search_count" DESC, "search_summaries"."last_searched_at" DESC LIMIT 10 /*action='analytics',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:21:in `map'
+Completed 200 OK in 1128ms (Views: 1.5ms | ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/analytics" for 127.0.0.1 at 2025-04-15 10:39:01 +0300
+  [1m[36mSearchQuery Load (0.5ms)[0m  [1m[34mSELECT "search_queries".* FROM "search_queries" WHERE "search_queries"."id" = 159 LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:5:in `perform'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:17:in `block in perform'
+  [1m[36mSearchSummary Load (3.1ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' AND (LENGTH(query) < 62) /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:17:in `block in perform'
+  [1m[36mSearchSummary Destroy (0.4ms)[0m  [1m[31mDELETE FROM "search_summaries" WHERE "search_summaries"."id" = 111 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:19:in `block (2 levels) in perform'
+  [1m[36mSearchSummary Load (0.5ms)[0m  [1m[37mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' AND "search_summaries"."query" = 'peter did not get back to me in time because he was at his mom' LIMIT 1 FOR UPDATE /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:24:in `block in perform'
+  [1m[36mSearchSummary Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "search_summaries" WHERE "search_summaries"."query" = 'peter did not get back to me in time because he was at his mom' AND "search_summaries"."ip_address" = '127.0.0.1' LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:28:in `block in perform'
+  [1m[36mSearchSummary Create (0.5ms)[0m  [1m[32mINSERT INTO "search_summaries" ("ip_address", "query", "search_count", "last_searched_at", "created_at", "updated_at") VALUES ('127.0.0.1', 'peter did not get back to me in time because he was at his mom', 2, '2025-04-15 07:39:01.225247', '2025-04-15 07:39:01.228098', '2025-04-15 07:39:01.228098') RETURNING "id" /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:28:in `block in perform'
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[35mCOMMIT /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:13:in `perform'
+Processing by SearchesController#analytics as */*
+Started POST "/searches" for 127.0.0.1 at 2025-04-15 10:39:01 +0300
+Processing by SearchesController#create as */*
+  Parameters: {"query"=>"Peter did not get back to me in time because he was at his mom's", "search"=>{"query"=>"Peter did not get back to me in time because he was at his mom's"}}
+  [1m[36mSearchSummary Load (0.8ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' ORDER BY "search_summaries"."search_count" DESC, "search_summaries"."last_searched_at" DESC LIMIT 10 /*action='analytics',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:21:in `map'
+Completed 200 OK in 718ms (Views: 2.4ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/analytics" for 127.0.0.1 at 2025-04-15 10:39:02 +0300
+Started POST "/searches" for 127.0.0.1 at 2025-04-15 10:39:02 +0300
+Processing by SearchesController#analytics as */*
+Processing by SearchesController#create as */*
+  Parameters: {"query"=>"Peter did not get back to me in time because he was at his mom's pla", "search"=>{"query"=>"Peter did not get back to me in time because he was at his mom's pla"}}
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mBEGIN /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mSearchQuery Create (16.3ms)[0m  [1m[32mINSERT INTO "search_queries" ("query", "ip_address", "created_at", "updated_at") VALUES ('Peter did not get back to me in time because he was at his mom''s', '127.0.0.1', '2025-04-15 07:39:02.795340', '2025-04-15 07:39:02.795340') RETURNING "id" /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (9.2ms)[0m  [1m[35mCOMMIT /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+Completed 201 Created in 1117ms (Views: 0.2ms | ActiveRecord: 27.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mSearchQuery Load (0.5ms)[0m  [1m[34mSELECT "search_queries".* FROM "search_queries" WHERE "search_queries"."id" = 160 LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:5:in `perform'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:17:in `block in perform'
+  [1m[36mSearchSummary Load (3.2ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' AND (LENGTH(query) < 64) /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:17:in `block in perform'
+  [1m[36mSearchSummary Destroy (0.5ms)[0m  [1m[31mDELETE FROM "search_summaries" WHERE "search_summaries"."id" = 112 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:19:in `block (2 levels) in perform'
+  [1m[36mSearchSummary Load (0.4ms)[0m  [1m[37mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' AND "search_summaries"."query" = 'peter did not get back to me in time because he was at his mom''s' LIMIT 1 FOR UPDATE /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:24:in `block in perform'
+  [1m[36mSearchSummary Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "search_summaries" WHERE "search_summaries"."query" = 'peter did not get back to me in time because he was at his mom''s' AND "search_summaries"."ip_address" = '127.0.0.1' LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:28:in `block in perform'
+  [1m[36mSearchSummary Create (0.5ms)[0m  [1m[32mINSERT INTO "search_summaries" ("ip_address", "query", "search_count", "last_searched_at", "created_at", "updated_at") VALUES ('127.0.0.1', 'peter did not get back to me in time because he was at his mom''s', 2, '2025-04-15 07:39:02.965712', '2025-04-15 07:39:02.972684', '2025-04-15 07:39:02.972684') RETURNING "id" /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:28:in `block in perform'
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[35mCOMMIT /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:13:in `perform'
+Started POST "/searches" for 127.0.0.1 at 2025-04-15 10:39:03 +0300
+Processing by SearchesController#create as */*
+  Parameters: {"query"=>"Peter did not get back to me in time because he was at his mom's place", "search"=>{"query"=>"Peter did not get back to me in time because he was at his mom's place"}}
+  [1m[36mSearchSummary Load (7.5ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' ORDER BY "search_summaries"."search_count" DESC, "search_summaries"."last_searched_at" DESC LIMIT 10 /*action='analytics',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:21:in `map'
+Completed 200 OK in 1504ms (Views: 2.1ms | ActiveRecord: 7.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/analytics" for 127.0.0.1 at 2025-04-15 10:39:03 +0300
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mSearchQuery Create (4.8ms)[0m  [1m[32mINSERT INTO "search_queries" ("query", "ip_address", "created_at", "updated_at") VALUES ('Peter did not get back to me in time because he was at his mom''s pla', '127.0.0.1', '2025-04-15 07:39:04.087251', '2025-04-15 07:39:04.087251') RETURNING "id" /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+Completed 201 Created in 1542ms (Views: 0.3ms | ActiveRecord: 5.9ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Processing by SearchesController#analytics as */*
+  [1m[36mSearchQuery Load (0.6ms)[0m  [1m[34mSELECT "search_queries".* FROM "search_queries" WHERE "search_queries"."id" = 161 LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:5:in `perform'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:17:in `block in perform'
+  [1m[36mSearchSummary Load (5.3ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' AND (LENGTH(query) < 68) /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:17:in `block in perform'
+  [1m[36mSearchSummary Destroy (0.4ms)[0m  [1m[31mDELETE FROM "search_summaries" WHERE "search_summaries"."id" = 113 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:19:in `block (2 levels) in perform'
+  [1m[36mSearchSummary Load (0.4ms)[0m  [1m[37mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' AND "search_summaries"."query" = 'peter did not get back to me in time because he was at his mom''s pla' LIMIT 1 FOR UPDATE /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:24:in `block in perform'
+  [1m[36mSearchSummary Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "search_summaries" WHERE "search_summaries"."query" = 'peter did not get back to me in time because he was at his mom''s pla' AND "search_summaries"."ip_address" = '127.0.0.1' LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:28:in `block in perform'
+  [1m[36mSearchSummary Create (0.5ms)[0m  [1m[32mINSERT INTO "search_summaries" ("ip_address", "query", "search_count", "last_searched_at", "created_at", "updated_at") VALUES ('127.0.0.1', 'peter did not get back to me in time because he was at his mom''s pla', 2, '2025-04-15 07:39:04.243485', '2025-04-15 07:39:04.249830', '2025-04-15 07:39:04.249830') RETURNING "id" /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:28:in `block in perform'
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[35mCOMMIT /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:13:in `perform'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mBEGIN /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mSearchQuery Create (8.1ms)[0m  [1m[32mINSERT INTO "search_queries" ("query", "ip_address", "created_at", "updated_at") VALUES ('Peter did not get back to me in time because he was at his mom''s place', '127.0.0.1', '2025-04-15 07:39:04.805957', '2025-04-15 07:39:04.805957') RETURNING "id" /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (4.2ms)[0m  [1m[35mCOMMIT /*action='create',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:10:in `create'
+Completed 201 Created in 1272ms (Views: 0.5ms | ActiveRecord: 13.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mSearchQuery Load (0.4ms)[0m  [1m[34mSELECT "search_queries".* FROM "search_queries" WHERE "search_queries"."id" = 162 LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:5:in `perform'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:17:in `block in perform'
+  [1m[36mSearchSummary Load (2.9ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' AND (LENGTH(query) < 70) /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:17:in `block in perform'
+  [1m[36mSearchSummary Destroy (0.4ms)[0m  [1m[31mDELETE FROM "search_summaries" WHERE "search_summaries"."id" = 114 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:19:in `block (2 levels) in perform'
+  [1m[36mSearchSummary Load (0.4ms)[0m  [1m[37mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' AND "search_summaries"."query" = 'peter did not get back to me in time because he was at his mom''s place' LIMIT 1 FOR UPDATE /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:24:in `block in perform'
+  [1m[36mSearchSummary Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "search_summaries" WHERE "search_summaries"."query" = 'peter did not get back to me in time because he was at his mom''s place' AND "search_summaries"."ip_address" = '127.0.0.1' LIMIT 1 /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:28:in `block in perform'
+  [1m[36mSearchSummary Create (0.3ms)[0m  [1m[32mINSERT INTO "search_summaries" ("ip_address", "query", "search_count", "last_searched_at", "created_at", "updated_at") VALUES ('127.0.0.1', 'peter did not get back to me in time because he was at his mom''s place', 2, '2025-04-15 07:39:04.953059', '2025-04-15 07:39:04.956769', '2025-04-15 07:39:04.956769') RETURNING "id" /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:28:in `block in perform'
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[35mCOMMIT /*application='RealTmeSearchEngine'*/[0m
+  ↳ app/sidekiq/summarize_search_job.rb:13:in `perform'
+  [1m[36mSearchSummary Load (0.6ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' ORDER BY "search_summaries"."search_count" DESC, "search_summaries"."last_searched_at" DESC LIMIT 10 /*action='analytics',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:21:in `map'
+Completed 200 OK in 1059ms (Views: 2.3ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/analytics" for 127.0.0.1 at 2025-04-15 10:39:05 +0300
+Processing by SearchesController#analytics as */*
+  [1m[36mSearchSummary Load (0.6ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' ORDER BY "search_summaries"."search_count" DESC, "search_summaries"."last_searched_at" DESC LIMIT 10 /*action='analytics',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:21:in `map'
+Completed 200 OK in 617ms (Views: 2.1ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/analytics" for 127.0.0.1 at 2025-04-15 10:39:06 +0300
+Processing by SearchesController#analytics as */*
+  [1m[36mSearchSummary Load (0.6ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' ORDER BY "search_summaries"."search_count" DESC, "search_summaries"."last_searched_at" DESC LIMIT 10 /*action='analytics',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:21:in `map'
+Completed 200 OK in 613ms (Views: 2.3ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/analytics" for 127.0.0.1 at 2025-04-15 10:39:06 +0300
+Processing by SearchesController#analytics as */*
+  [1m[36mSearchSummary Load (0.6ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' ORDER BY "search_summaries"."search_count" DESC, "search_summaries"."last_searched_at" DESC LIMIT 10 /*action='analytics',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:21:in `map'
+Completed 200 OK in 617ms (Views: 3.0ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/analytics" for 127.0.0.1 at 2025-04-15 10:39:07 +0300
+Processing by SearchesController#analytics as */*
+  [1m[36mSearchSummary Load (0.7ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' ORDER BY "search_summaries"."search_count" DESC, "search_summaries"."last_searched_at" DESC LIMIT 10 /*action='analytics',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:21:in `map'
+Completed 200 OK in 631ms (Views: 2.6ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/analytics" for 127.0.0.1 at 2025-04-15 10:39:08 +0300
+Processing by SearchesController#analytics as */*
+  [1m[36mSearchSummary Load (0.6ms)[0m  [1m[34mSELECT "search_summaries".* FROM "search_summaries" WHERE "search_summaries"."ip_address" = '127.0.0.1' ORDER BY "search_summaries"."search_count" DESC, "search_summaries"."last_searched_at" DESC LIMIT 10 /*action='analytics',application='RealTmeSearchEngine',controller='searches'*/[0m
+  ↳ app/controllers/searches_controller.rb:21:in `map'
+Completed 200 OK in 617ms (Views: 3.2ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
