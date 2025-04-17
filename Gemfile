@@ -68,6 +68,12 @@ group :development do
   gem "web-console"
    gem 'dotenv-rails'
     gem 'debug', platforms: [:mri]
+    gem 'capistrano'
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-bundler'
+  gem 'capistrano-passenger'
+  gem 'capistrano-sidekiq'
 end
 
 group :test do
