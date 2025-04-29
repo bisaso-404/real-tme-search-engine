@@ -104,8 +104,6 @@ No login required – tracks via IP for simple, insightful usage monitoring.
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-> Add a link to your deployed project.
-
 - [Live Demo Link](http://realtimesear.vps.webdock.cloud/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
