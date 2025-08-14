@@ -128,7 +128,7 @@ Example command:
 
 ### Setup
 
-Clone this repository to your desired folder: ` https://github.com/bisaso-404/real-tme-search-engine `
+Clone this repository to your desired folder using this url: ` https://github.com/bisaso-404/real-tme-search-engine `
 
 <!--
 Example commands:
